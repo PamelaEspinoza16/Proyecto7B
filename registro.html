@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h1>Registro</h1>
+    <p>Datos recibidos:</p>
+    <ul id="datos">
+        <!-- Aquí se mostrarán los datos -->
+    </ul>
+
+    <script>
+        // Leer parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nombre = urlParams.get('nombre');
+        const correo = urlParams.get('correo');
+
+        // Mostrar los datos
+        const datosList = document.getElementById('datos');
+        if (nombre && correo) {
+            datosList.innerHTML = `
+                <li>Nombre: ${nombre}</li>
+                <li>Correo: ${correo}</li>
+            `;
+        } else {
+            datosList.innerHTML = '<li>No se recibieron datos.</li>';
+        }
+    </script>
+</body>
+</html>

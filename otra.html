@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otra Página</title>
+</head>
+<body>
+    <h1>Datos recibidos</h1>
+    <script>
+        // Obtener los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const correo = params.get('correo');
+
+        // Mostrar los valores en la página
+        document.write(`<p>Nombre: ${nombre}</p>`);
+        document.write(`<p>Correo: ${correo}</p>`);
+    </script>
+</body>
+</html>
